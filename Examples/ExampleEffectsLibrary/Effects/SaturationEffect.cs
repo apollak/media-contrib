@@ -48,7 +48,7 @@ namespace ExampleEffectsLibrary.Effects
         public void SetEncodingProperties(VideoEncodingProperties encodingProperties, IDirect3DDevice device)
         {
             _currentEncodingProperties = encodingProperties;
-            _canvasDevice = CanvasDevice.CreateFromDirect3D11Device(device, CanvasDebugLevel.Error);
+            _canvasDevice = CanvasDevice.CreateFromDirect3D11Device(device/*, CanvasDebugLevel.Error*/);
         }
 
         public void SetProperties(IPropertySet configuration)

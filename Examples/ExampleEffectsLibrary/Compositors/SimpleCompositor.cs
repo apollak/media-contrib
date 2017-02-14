@@ -36,7 +36,6 @@ namespace ExampleEffectsLibrary.Compositors
                         drawSession.FillEllipse(new Vector2((float)overlay.Position.X + width / 2, (float)overlay.Position.Y + height / 2), width / 2, height / 2, videoBrush);
                     }
                 }
-
                 drawSession.DrawText("Party\nTime!", new Vector2(_backgroundProperties.Width / 1.5f, 100), Windows.UI.Colors.CornflowerBlue,
                     new CanvasTextFormat()
                     {
@@ -51,7 +50,7 @@ namespace ExampleEffectsLibrary.Compositors
         public void SetEncodingProperties(VideoEncodingProperties backgroundProperties, IDirect3DDevice device)
         {
             _backgroundProperties = backgroundProperties;
-            _canvasDevice = CanvasDevice.CreateFromDirect3D11Device(device, CanvasDebugLevel.Error);
+            _canvasDevice = CanvasDevice.CreateFromDirect3D11Device(device/*, CanvasDebugLevel.Error*/);
         }
 
         public void Close(MediaEffectClosedReason reason)

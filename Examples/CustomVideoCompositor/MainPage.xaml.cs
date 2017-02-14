@@ -49,10 +49,13 @@ namespace CustomVideoCompositor
             picker.FileTypeFilter.Add(".mov");
             var file = await picker.PickSingleFileAsync();
 
-            var clip = await MediaClip.CreateFromFileAsync(file);
-            _composition.Clips.Add(clip);
+            if (file != null)
+            {
+                var clip = await MediaClip.CreateFromFileAsync(file);
+                _composition.Clips.Add(clip);
 
-            SetupMediaStreamSource();
+                SetupMediaStreamSource();
+            }
         }
 
         private async void InitialVideo_Click(object sender, RoutedEventArgs e)
